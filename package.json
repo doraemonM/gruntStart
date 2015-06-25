@@ -1,6 +1,6 @@
 {
   "name": "Site-Name",
-  "version": "0.0.1",
+  "version": "0.1",
   "description": "사이트설명",
   "main": "index.js",
   "scripts": {
