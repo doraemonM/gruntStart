@@ -1,8 +1,8 @@
 {
-  "name": "Site-Name",
-  "version": "0.0",
+  "name": "SiteName",
+  "version": "0.0.0",
   "authors": [
-    "moonjuyeong <mjy34@naver.com>"
+    "demun <mjy34@naver.com>"
   ],
   "license": "MIT",
   "ignore": [
