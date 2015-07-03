@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+
+include "head.html"
+
+
+<title>title</title>
+</head>
+<body>
+include "header.html"
+<div id="contents">
+	<div class="wrapCommon contactWrap">
+		<div class="margin0Auto">
+			<h2><img src="/images/contact.png" alt="contact" /></h2>			
+			<div class="contactMaso">
+				<div class="masoContact conList">
+					<ul>
+						<li><a href="#"><img src="/images/mapBtn01_off.png" alt="" /></a></li>
+						<li><a href="#"><img src="/images/mapBtn02_off.png" alt="" /></a></li>
+						<li><a href="#"><img src="/images/mapBtn03_off.png" alt="" /></a></li>
+					</ul>
+				</div>
+				<div class="masoContact conMap">
+					<div>
+						<img src="/images/conMap.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+</div> <!-- /container -->
+
+
+include "js.html"
+<script type="text/javascript">
+$(document).ready(function(){
+	var $container = $('.contactMaso');		
+	$container.masonry({			
+	  itemSelector: '.masoContact'
+	});			
+	
+});
+</script>
+
+</body>
+</html>

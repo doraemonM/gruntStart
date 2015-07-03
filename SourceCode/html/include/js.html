@@ -3,12 +3,30 @@
 
 <!-- plugins -->
 <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- <script src="../plugins/jquery-ui/jquery-ui.min.js"></script> -->
-<!-- <script src="../plugins/bxSlider/jquery.bxslider.min.js"></script> -->
-<!-- <script src="../plugins/magnific-popup/jquery.magnific-popup.min.js"></script> -->
-<!-- <script src="../plugins/angular/angular.min.js"></script> -->
-<!-- <script src="../plugins/masonry/masonry.pkgd.min.js"></script> -->
-<!-- <script src="../plugins/FlexSlider/jquery.flexslider-min.js"></script> -->
+	
 
 <!-- common -->
 <script src="../js/common.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(".mobileList").click(function(){	
+			$("#gnb").animate({marginRight:'0'});	
+			return false;
+		});	
+		$(".closeWrap a").click(function(){
+			$("#gnb").animate({marginRight:'-62%'});	
+			return false;
+		});				
+		
+		$(window).resize(function(){
+			var thisW = $(this).width();
+			if(thisW > 601){	
+				$("#gnb").css({marginRight:'0'});	
+			}else if (thisW <= 600)
+			{
+				$("#gnb").css({marginRight:'-62%'});	
+			}
+		});
+	});
+</script>

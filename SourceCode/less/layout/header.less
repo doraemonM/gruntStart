@@ -1,1 +1,154 @@
- 
+#header{
+	position:absolute;
+	width:100%;
+	padding:30px 10%; 
+	border-bottom:1px solid #ccc;
+	background:#fff;
+	z-index:1000;
+}
+#header > h1{float:left;}
+#gnb{position:absolute; top:30px; right:10%; z-index:1000;}
+#gnb li{float:left; margin-left:45px;}
+#gnb li:first-child{margin-left:0;}
+#gnb li a{	
+	 display:block;
+	 width:73px; 
+	 height:30px;
+	 background:url('/images/gnb01_off.png') no-repeat;
+ }
+
+  #gnb li.gnb02 a{
+	width:84px;
+	 background:url('/images/gnb02_off.png') no-repeat;
+}
+
+  #gnb li.gnb03 a{
+	width:73px;
+	 background:url('/images/gnb03_off.png') no-repeat;
+}
+  #gnb li.gnb04 a{
+	width:84px;
+	 background:url('/images/gnb04_off.png') no-repeat;
+}
+  #gnb li.gnb05 a{
+	width:89px;
+	 background:url('/images/gnb05_off.png') no-repeat;
+}
+
+#gnb li.gnb01.on a,
+#gnb li.gnb01:hover a{background:url('/images/gnb01_on.png') no-repeat;}
+
+#gnb li.gnb02.on a,
+#gnb li.gnb02:hover a{background:url('/images/gnb02_on.png') no-repeat;}
+
+#gnb li.gnb03.on a,
+#gnb li.gnb03:hover a{background:url('/images/gnb03_on.png') no-repeat;}
+
+#gnb li.gnb04.on a,
+#gnb li.gnb04:hover a{background:url('/images/gnb04_on.png') no-repeat;}
+
+#gnb li.gnb05.on a,
+#gnb li.gnb05:hover a{background:url('/images/gnb05_on.png') no-repeat;}
+
+.mobileList{display:none;}
+.closeWrap{display:none;}
+
+
+  @media screen and (max-width: 600px) {	
+	#header{padding:15px 10%; max-height:67px;}
+	#header > h1{float:left; width:25.6%; }	
+	#gnb li{float:none; text-align:center; margin-left:0;}	
+	#header > h1 img{max-width:82px;}
+	.mobileList{display:block; float:right; width:8.75%;}
+	.mobileList img{max-width:24px;}
+	.closeWrap{display:block; width:100%; max-height:67px; border-bottom:1px solid #5cc3e9; padding:15px 0;}
+	.closeWrap:after{clear:both; display:block; content:'';}
+	.closeWrap a{float:right; width:11.12%; margin-right:16%;}
+	.closeWrap img{max-width:24px;}
+	#gnb{
+		position:absolute; 
+		top:0; 
+		right:0; 
+		bottom:0; 
+		height:100%; 
+		background:#19abe0; 
+		margin-right:-62%; 
+		width:62%; 
+		border-right:1px solid #373937; 
+		z-index: 1000; 
+	}
+	#gnb li{
+		width:100%;
+		border-bottom:1px solid #5cc3e9;	
+	}
+
+	#gnb li.on,
+	#gnb li:hover{background:#008abd;}
+
+	#gnb li a,
+	 #gnb li.gnb02 a,
+	 #gnb li.gnb03 a,
+	 #gnb li.gnb04 a,
+	 #gnb li.gnb05 a{.textHide; width:100%; height:45px;}
+	
+	#gnb li a{background:url('/images/mgnb01_off.gif') no-repeat;}
+	 #gnb li.gnb02 a{background:url('/images/mgnb02_off.gif') no-repeat;}
+	 #gnb li.gnb03 a{background:url('/images/mgnb03_off.gif') no-repeat;}
+	 #gnb li.gnb04 a{background:url('/images/mgnb04_off.gif') no-repeat;}
+	 #gnb li.gnb05 a{background:url('/images/mgnb05_off.gif') no-repeat;}
+	
+	#gnb li.gnb01.on a,
+	#gnb li.gnb01:hover a{background:url('/images/mgnb01_on.gif') no-repeat;}
+
+	#gnb li.gnb02.on a,
+	#gnb li.gnb02:hover a{background:url('/images/mgnb02_on.gif') no-repeat;}
+
+	#gnb li.gnb03.on a,
+	#gnb li.gnb03:hover a{background:url('/images/mgnb03_on.gif') no-repeat;}
+
+	#gnb li.gnb04.on a,
+	#gnb li.gnb04:hover a{background:url('/images/mgnb04_on.gif') no-repeat;}
+
+	#gnb li.gnb05.on a,
+	#gnb li.gnb05:hover a{background:url('/images/mgnb05_on.gif') no-repeat;}
+
+	
+
+
+    }//600ÀÌÇÏ³¡
+    @media screen and (min-width: 601px) and (max-width: 1000px) {
+	#header{padding:0 0 30px;}
+	#header > h1{float:none; text-align:center; padding:30px 0;}
+	#gnb{width:100%; right:0;  top:66px}
+	#gnb ul{margin:0 auto; width:96%;}	
+	#gnb ul:after{clear:both; display:block; content:'';}
+	#gnb li{width:20%; margin:0; text-align:center;}
+	#gnb li img{width:100%;}
+	#gnb li a,
+	 #gnb li.gnb02 a,
+	 #gnb li.gnb03 a,
+	 #gnb li.gnb04 a,
+	 #gnb li.gnb05 a{.textHide; width:100%;}
+	
+	
+	#gnb li.gnb01 a,
+	#gnb li.gnb01.on a,
+	#gnb li.gnb01:hover a,
+	#gnb li.gnb02 a,
+	#gnb li.gnb02.on a,
+	#gnb li.gnb02:hover a,
+	#gnb li.gnb03 a,
+	#gnb li.gnb03.on a,
+	#gnb li.gnb03:hover a,
+	#gnb li.gnb04 a,
+	#gnb li.gnb04.on a,
+	#gnb li.gnb04:hover a,
+	#gnb li.gnb05 a,
+	#gnb li.gnb05.on a,
+	#gnb li.gnb05:hover a{background-position:center 0;}
+    }
+    @media screen and (min-width: 1001px) {
+	#gnb li a{.textHide;}
+    }
+
+

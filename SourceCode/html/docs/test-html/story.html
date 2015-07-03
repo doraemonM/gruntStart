@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+
+include "head.html"
+  
+
+<title>story</title>
+</head>
+<body>
+include "header.html"
+<div id="contents" class="contents100">
+	<div id="storyWrap">	
+		<div class="stroySlideWrap">			
+			<div  id="touchSlider" class="storySlide">			
+				<ul>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실</p>
+						<a href="#"><img src="/images/camera01.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실2</p>
+						<a href="#"><img src="/images/camera02.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실3</p>
+						<a href="#"><img src="/images/camera03.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실4</p>
+						<a href="#"><img src="/images/camera04.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실5</p>
+						<a href="#"><img src="/images/camera01.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실6</p>
+						<a href="#"><img src="/images/camera02.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실7</p>
+						<a href="#"><img src="/images/camera03.gif" alt="" /></a>
+					</li>
+					<li>
+						<p>귀신보다 무서운 건,<br />오늘이 ‘일요일밤’이라는 사실8</p>
+						<a href="#"><img src="/images/camera04.gif" alt="" /></a>
+					</li>
+				</ul>
+			</div>
+			<div class="btn_area">
+				<a href="#" class="prev"><img src="/images/prev.png "  alt="이전" /></a>
+				<div id="paging">
+					<a href="#"></a>
+				</div>
+				<div id="moCount">
+					<span class="current"></span>
+					<span>/</span>
+					<span class="total"></span>
+				</div>
+				<a href="#" class="next"><img src="/images/next.png "  alt="이전" /></a>		
+			</div>
+		</div>
+		<!-- div class="stroyCamera">
+			<img src="/images/camera.png" alt="" />
+		</div -->
+	</div>
+	
+</div> <!-- /container -->
+
+
+include "js.html"
+<script type="text/javascript">
+$(document).ready(function(){
+	
+		$("#touchSlider").touchSlider({
+				flexible : true,	
+				btn_prev : $("#touchSlider").next().find(".prev"),
+				btn_next : $("#touchSlider").next().find(".next"),
+				speed : 0.2,	
+				speed2 : 0.8,	
+				speed3 : 0.5,
+				paging : $('#paging a'),
+				counter : function (e) {
+					if($('.storySlide').length > 0){
+						
+							//var winW = $(this).width();		
+							//$('.stroySlideWrap').css('background-position', (-(1920 - $(window).width()) / 2 ) + 'px');
+							//TweenMax.to($('.stroySlideWrap'), 0.2, {'backgroundPosition':(-(1920 - $(window).width()) / 2 ) + 'px', ease:Quart.easeOut}, 0.2);		
+						TweenMax.to($('.stroySlideWrap'), 0.2, {'backgroundPosition':(-(1920 - $(window).width()) / 2 ) + 'px', ease:Quart.easeOut}, 0.2);	
+						$('.stroySlideWrap').css({background:'url(/images/storyBg'+e.current+'.jpg)'});
+						$('#paging a').removeClass('on');
+						$($('#paging a')[e.current-1]).addClass('on');
+							$('#paging a').on('click',function(){
+								$('#paging a').removeClass('on');
+								$(this).addClass('on');
+							});		
+						$('#moCount .current').text(e.current);
+						$('#moCount .total').text(e.total);
+						
+					}
+				}	
+				//$("#count").text("current : " + e.current + ", total : " + e.total);			
+			});
+			
+		
+			
+
+		/*
+		$(window).resize( function() {
+			var windowWidth = $(this).width();			
+			var windowmWidth = -($(this).width());				
+			$('.serviceSlide >ul >li').each(function(){
+				var idx = $(this).index();
+				$($('.serviceSlide >ul >li')[idx]).css({backgroundSize:windowWidth+'px '});		
+			});
+		});
+			
+	$(window).trigger('resize');
+	*/
+});
+</script>
+
+</body>
+</html>

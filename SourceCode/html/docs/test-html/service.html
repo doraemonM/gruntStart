@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+
+include "head.html"
+  
+
+<title>service</title>
+</head>
+<body>
+include "header.html"
+<div id="white"></div>
+<div id="contents" class="contents100">
+	<div id="serviceWrap" class="margin0Auto">
+	  <div  id="touchSlider" class="serviceSlide">
+		<ul>				
+			<li class="service01">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic01_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic01_02.png" alt="" />
+					</div>
+					<div class="serviceAnime3">
+						<img src="/images/servic01_03.png" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="service02">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic02_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic02_02.png" alt="" />
+					</div>
+					<div class="serviceAnime4">
+						<img src="/images/servic02_03.png" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="service03">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic03_01.png" alt="" />
+					</div>
+					<div class="serviceAnime5">
+						<img src="/images/servic03_02.png" alt="" />
+					</div>
+					<div class="serviceAnime3">
+						<img src="/images/servic03_03.png" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="service04">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic04_01.png" alt="" />
+					</div>
+					<div class="serviceAnime3">
+						<img src="/images/servic04_02.png" alt="" />
+					</div>
+					<div class="serviceAnime6">
+						<img src="/images/servic04_03.png" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="service05">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic05_01.png" alt="" />
+					</div>
+					<div class="serviceAnime4sp">
+						<img src="/images/servic05_02.png" alt="" />
+					</div>				
+				</div>
+			</li>
+			<li class="service06">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic06_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic06_02.png" alt="" />
+					</div>	
+					<div class="serviceAnime7">
+						<img src="/images/servic06_03.png" alt="" />
+					</div>	
+				</div>
+			</li>
+			<li class="service07">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic07_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic07_02.png" alt="" />
+					</div>	
+					<div class="serviceAnime4">
+						<img src="/images/servic07_03.png" alt="" />
+					</div>	
+				</div>
+			</li>
+			<li class="service08">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic08_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic08_02.png" alt="" />
+					</div>	
+					<div class="serviceAnime5">
+						<img src="/images/servic08_03.png" alt="" />
+					</div>	
+				</div>
+			</li>			
+			<li class="service09">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic09_01.png" alt="" />
+					</div>
+					<div class="serviceAnime7">
+						<img src="/images/servic09_02.png" alt="" />
+					</div>							
+				</div>
+			</li>
+			<li class="service10">
+				<div class="margin0Auto AnimeWrap">
+					<div class="serviceAnime">
+						<img src="/images/servic10_01.png" alt="" />
+					</div>
+					<div class="serviceAnime2">
+						<img src="/images/servic10_02.png" alt="" />
+					</div>	
+					<div class="serviceAnime8">
+						<img src="/images/servic10_03.png" alt="" />
+					</div>	
+				</div>
+			</li>	
+			
+		</ul>
+	</div>
+		<div class="btn_area">
+			<a href="#" class="prev"><img src="/images/prev.png "  alt="이전" /></a>
+			<a href="#" class="next"><img src="/images/next.png "  alt="이전" /></a>
+		</div>	
+	</div>
+	<div id="btn_page">
+		<a href="#"></a>
+	</div>
+</div> <!-- /container -->
+
+
+include "js.html"
+<script type="text/javascript">
+$(document).ready(function(){
+	
+		$("#touchSlider").touchSlider({
+				flexible : true,	
+				btn_prev : $("#touchSlider").next().find(".prev"),
+				btn_next : $("#touchSlider").next().find(".next"),
+				speed : 0.2,	
+				speed2 : 0.8,	
+				speed3 : 0.5,
+				counter : function (e) {
+					if($('.serviceSlide').length > 0){		
+						TweenMax.to($('.serviceSlide >ul >li'), 0.2, {'backgroundPosition':(-(1920 - $(window).width()) / 2 ) + 'px', ease:Quart.easeOut}, 0.2);
+					
+					}
+				}	
+					
+				//$("#count").text("current : " + e.current + ", total : " + e.total);
+				
+				
+				
+				
+			});
+
+		/*
+		$(window).resize( function() {
+			var windowWidth = $(this).width();			
+			var windowmWidth = -($(this).width());				
+			$('.serviceSlide >ul >li').each(function(){
+				var idx = $(this).index();
+				$($('.serviceSlide >ul >li')[idx]).css({backgroundSize:windowWidth+'px '});		
+			});
+		});
+			
+	$(window).trigger('resize');
+	*/
+});
+</script>
+
+</body>
+</html>
