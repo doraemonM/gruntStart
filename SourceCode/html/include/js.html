@@ -11,22 +11,28 @@
 	$(document).ready(function(){
 
 		$(".mobileList").click(function(){	
-			$("#gnb").animate({marginRight:'0'});	
+			$("#gnb").show().animate({marginRight:'0'});	
 			return false;
 		});	
 		$(".closeWrap a").click(function(){
-			$("#gnb").animate({marginRight:'-62%'});	
+			$("#gnb").animate({marginRight:'-62%'},function(){
+				$(this).hide();
+			});
 			return false;
 		});				
 		
 		$(window).resize(function(){
 			var thisW = $(this).width();
-			if(thisW > 601){	
-				$("#gnb").css({marginRight:'0'});	
+			if(thisW >= 601){	
+				$("#gnb").css({marginRight:'0',display:'block'});	
 			}else if (thisW <= 600)
 			{
-				$("#gnb").css({marginRight:'-62%'});	
+				$("#gnb").css({marginRight:'-62%',display:'none'});	
 			}
 		});
+
+		$(window).load(function() {
+			$(window).trigger('resize');		
+		});		
 	});
 </script>

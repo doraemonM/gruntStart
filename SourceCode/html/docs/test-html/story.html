@@ -48,10 +48,7 @@ include "header.html"
 				</ul>
 			</div>
 			<div class="btn_area">
-				<a href="#" class="prev"><img src="/images/prev.png "  alt="이전" /></a>
-				<div id="paging">
-					<a href="#"></a>
-				</div>
+				<a href="#" class="prev"><img src="/images/prev.png "  alt="이전" /></a>				
 				<div id="moCount">
 					<span class="current"></span>
 					<span>/</span>
@@ -71,7 +68,59 @@ include "header.html"
 include "js.html"
 <script type="text/javascript">
 $(document).ready(function(){
+
 	
+	 $(".btn_area .next").before($("<div id='paging'></div>"));	
+	 $(".storySlide>ul>li").each(function(num){
+			 $('#moCount .total').text(num+1);
+			 $('#moCount .current').text('1');
+			 $("#paging")
+				 .append("<button onClick='mySwipe.slide("+num+")'></button>")
+			$("#paging button").each(function(){
+				var idx = $(this).index()+1;
+				$(this).attr('class','paging'+idx+'');
+				$($("#paging button")[0]).addClass('on');
+			});
+		 });		
+	
+		
+	
+
+
+	 window.mySwipe = $('.storySlide').Swipe({			
+		  continuous: true,
+			 //auto:300, 자동롤링
+			//speed:300, 자동롤링
+		  stopPropagatio:true,
+		  callback: function(pos) {
+			  var posPlus = pos+1
+			 $('#moCount .current').text(pos+1);	
+			TweenMax.to($('.stroySlideWrap'), 0.2, {'backgroundPosition':(-(1920 - $(window).width()) / 2 ) + 'px', ease:Quart.easeOut}, 0.2);		
+			
+			 $('.stroySlideWrap').css({background:'url(/images/storyBg'+posPlus+'.jpg)'});
+			 $($('#paging button')[pos]).addClass('on').siblings().removeClass('on');
+				$('#paging button').on('click',function(){
+					$('#paging button').removeClass('on');
+					$(this).addClass('on');
+				});	
+				
+			 } //콜백엔드
+		 
+		 }).data('Swipe');
+			
+				
+
+		$('.btn_area .next').click(function(){
+			 window.mySwipe.next();
+			return false;
+		})
+		$('.btn_area .prev').click(function(){
+			 window.mySwipe.prev();
+			return false;				
+		});
+
+
+	/*
 		$("#touchSlider").touchSlider({
 				flexible : true,	
 				btn_prev : $("#touchSlider").next().find(".prev"),
@@ -105,7 +154,7 @@ $(document).ready(function(){
 		
 			
 
-		/*
+		
 		$(window).resize( function() {
 			var windowWidth = $(this).width();			
 			var windowmWidth = -($(this).width());				

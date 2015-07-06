@@ -106,7 +106,7 @@ include "header.html"
 					<div class="serviceAnime">
 						<img src="/images/servic08_01.png" alt="" />
 					</div>
-					<div class="serviceAnime2">
+					<div class="serviceAnime3">
 						<img src="/images/servic08_02.png" alt="" />
 					</div>	
 					<div class="serviceAnime5">
@@ -154,14 +154,73 @@ include "header.html"
 include "js.html"
 <script type="text/javascript">
 $(document).ready(function(){
-	
+
+
+
+
+			 window.mySwipe = $('.serviceSlide').Swipe({			
+			  continuous: true,
+				 //auto:300, 자동롤링
+				//speed:300, 자동롤링
+			  stopPropagatio:true,
+			   callback: function(pos) {
+				 		
+						$('#white').show().delay(100).fadeOut(1000);
+					
+						$('.serviceSlide li').each(function(){								
+							var tl = new TimelineLite();	
+							var setslide = $(this);
+							var setAnime = $(this).find('.serviceAnime');						
+							var setAnime2 = $(this).find('.serviceAnime2');
+							var setAnime3 = $(this).find('.serviceAnime3');
+							var setAnime4 = $(this).find('.serviceAnime4');
+							var setAnime4sp = $(this).find('.serviceAnime4sp'); 
+							var setAnime5 = $(this).find('.serviceAnime5'); 
+							var setAnime6 = $(this).find('.serviceAnime6 img'); 
+							var setAnime7 = $(this).find('.serviceAnime7'); 
+							var setAnime8 = $(this).find('.serviceAnime8'); 
+							
+							tl.staggerFrom(setAnime, 0.8, {right:'50%', opacity:0,  ease:Back.easeInOut,}, 0.5, "stagger");								
+							tl.staggerFrom(setAnime2, 0.6, {left:'100%', opacity:0, ease:Circ.easeInOut}, 1, "stagger");
+							tl.staggerFrom(setAnime3, 0.5, {right:'100%', opacity:0, ease:Elastic.easeOut}, 2, "stagger");
+							tl.staggerFrom(setAnime4, 0.4, {top:'100%', opacity:0, ease:Circ.easeInOut}, 1, "stagger");
+							tl.staggerFrom(setAnime4sp, 0.7, {top:'100%', opacity:0, ease:Circ.easeInOut}, 1, "stagger");
+							tl.staggerFrom(setAnime5, 0.9, {top:'100%', opacity:0, ease:Circ.easeInOut}, 1, "stagger");
+							tl.staggerFrom(setAnime6, 0.5, {scale:2, opacity:0, ease:Circ.easeInOut}, 1, "stagger");
+							tl.staggerFrom(setAnime7, 0.7, {scale:0, opacity:0, ease:Circ.easeInOut}, 5, "stagger");
+							tl.staggerFrom(setAnime8, 0.3, {scale:0, left:'50%', top:'50%',opacity:0, ease:Circ.easeInOut}, 5, "stagger");
+						});
+					
+					
+					
+				  }		
+			 }).data('Swipe');
+			
+				
+
+			$('.btn_area .next').click(function(){
+				 window.mySwipe.next();
+				return false;
+			})
+			$('.btn_area .prev').click(function(){
+				 window.mySwipe.prev();
+				return false;				
+			}); 
+
+			
+
+
+
+
+
+/*	
 		$("#touchSlider").touchSlider({
 				flexible : true,	
 				btn_prev : $("#touchSlider").next().find(".prev"),
 				btn_next : $("#touchSlider").next().find(".next"),
 				speed : 0.2,	
-				speed2 : 0.8,	
-				speed3 : 0.5,
+				0.5 : 0.8,	
+				0.8 : 0.5,
 				counter : function (e) {
 					if($('.serviceSlide').length > 0){		
 						TweenMax.to($('.serviceSlide >ul >li'), 0.2, {'backgroundPosition':(-(1920 - $(window).width()) / 2 ) + 'px', ease:Quart.easeOut}, 0.2);
@@ -176,7 +235,7 @@ $(document).ready(function(){
 				
 			});
 
-		/*
+	
 		$(window).resize( function() {
 			var windowWidth = $(this).width();			
 			var windowmWidth = -($(this).width());				

@@ -137,9 +137,11 @@ margin-bottom:-30px;
 #serviceWrap .btn_area a.prev{left:5%;}
 #serviceWrap .btn_area a.next{right:5%;}
 
-.serviceSlide {width:100%; height:100%;overflow:hidden;}
-.serviceSlide ul {overflow:hidden;}
-.serviceSlide ul li{width:100%;height:100%;}
+.serviceSlide {width:100%; height:100%;overflow:hidden;  visibility: hidden;  position: relative;}
+.serviceSlide ul {height:100%; overflow: hidden;  position: relative;}
+.serviceSlide ul:after{clear:both; display:block; content:'';}
+.serviceSlide ul li{width:100%; float:left; position:relative; height:100%;}
+
 .serviceSlide ul li.service01{background:url('/images/service_bg01.jpg') repeat-y center center;}
 .serviceSlide ul li.service02{background:url('/images/service_bg02.jpg') repeat-y center center;}
 .serviceSlide ul li.service03{background:url('/images/service_bg09.jpg') repeat-y center center;}
@@ -150,7 +152,6 @@ margin-bottom:-30px;
 .serviceSlide ul li.service08{background:url('/images/service_bg05.jpg') repeat-y center center;}
 .serviceSlide ul li.service09{background:url('/images/service_bg06.jpg') repeat-y center center;}
 .serviceSlide ul li.service10{background:url('/images/service_bg10.jpg') repeat-y center center;}
-
 
 .serviceSlide .AnimeWrap{position:relative; height:100%;}
 .serviceSlide .AnimeWrap > div{position:absolute; width:100%; }
@@ -213,8 +214,8 @@ margin-bottom:-30px;
 
 
 .service08 .serviceAnime img{width:31.37%;}
-.service08 .serviceAnime2{top:35.2%; text-align:center;}
-.service08 .serviceAnime2 img{width:68.5%;}
+.service08 .serviceAnime3{top:35.2%; text-align:center;}
+.service08 .serviceAnime3 img{width:68.5%;}
 .service08 .serviceAnime5{top:58.8%; text-align:left;}
 .service08 .serviceAnime5 img{width:24.5%;}
 
@@ -238,9 +239,12 @@ margin-bottom:-30px;
 //스토리부분 시작
 #storyWrap {clear:both; width:100%; height:100%; margin:0 auto; overflow:hidden;  }
 .stroySlideWrap{height:100%; position:relative; background:url('/images/storyBg.jpg') repeat-y;}
-.storySlide {width:100%; height:100%; overflow:hidden; background:url('/images/camera.png') no-repeat center 310px; background-size:877px 453px;}
-.storySlide ul {overflow:hidden;}
-.storySlide ul li{width:100%; text-align:center; margin:436px 0 0 0;}
+
+
+.storySlide {width:100%; height:100%; overflow:hidden;  visibility: hidden;  position: relative; background:url('/images/camera.png') no-repeat center 310px; background-size:877px 453px;}
+.storySlide ul {height:100%; overflow: hidden;  position: relative;}
+.storySlide ul:after{clear:both; display:block; content:'';}
+.storySlide ul li{width:20%; float:left; position:relative; text-align:center; margin:436px 0 0 0;}
 .storySlide ul li p{position:absolute; top:-240px; left:0; text-align:center; width:100%; font-size:32px; color:#fff; font-weight:600;}
 .storySlide ul li img{width:365px; height:274px; margin-left:-148px;}
 
@@ -271,7 +275,7 @@ margin-bottom:-30px;
 .stroySlideWrap .paging8.on{background:url('/images/paging08_on.png') no-repeat;}
 
 .stroySlideWrap .btn_area > a.next,
-.stroySlideWrap #paging a{margin-left:10px;}
+.stroySlideWrap #paging button{margin-left:10px;}
 /*
 #storyWrap {clear:both; width:100%; height:100%; overflow:hidden;  }
 .stroySlideWrap{position:relative; width:100%; top:35%;}
@@ -312,12 +316,27 @@ margin-bottom:-30px;
 .spec .common .headEx{background-color:#e7e7e7;}
 
 
+
+
 .hireStep > div img{width:65.7%;}
 .beneMaso li{text-align:center; width:14.27%;}
 .beneMaso li img{width:83.5%;}
 .beneMaso{width:100%;}
 //리쿠르트 시작
 
+.applyBg{background:#f0f0f0; margin:50px 0 0;}
+.applyBg:after{clear:both; display:block; content:'';}
+
+
+.applyBg .spec dt,
+.applyBg .spec dd{background:none; padding-left:0; margin:6px 0 0;}
+.applyBg .spec dl{border:1px solid #d6d6d6; padding:14px 0 20px; border-left:0; border-right:0; }
+.applyBg .spec dt{width:10%; clear:none;}
+.applyBg .spec dd{width:40%;}
+.applyBg .spec dd.w80{width:80%;}
+.applyBg .spec dd input{width:81.25%; border:1px solid #b5b5b5;}
+.applyBg .spec dd p{font-size:0.6em; padding:5px 0 0;}
+.applyBtn{text-align:center; clear:both; padding:20px 0  50px;}
 
 //콘택트 시작
 .contactWrap{padding-top:241px;}
@@ -383,7 +402,7 @@ margin-bottom:-30px;
 	.stroySlideWrap .btn_area > a img{width:16px; height:auto;}
 	.stroySlideWrap #paging{display:inline-block;}	
 	.stroySlideWrap .btn_area > a.next{margin-left:5px;}
-	.stroySlideWrap #paging a{display:none; width:45px; height:45px; background-size:100%; margin:0 0 0 5px;}
+	.stroySlideWrap #paging button{display:none; width:45px; height:45px; background-size:100%; margin:0 0 0 5px;}
 	.stroySlideWrap #moCount{display:inline-block; padding:0 10px;}
 
 	//리쿠르트부분 시작
@@ -402,9 +421,17 @@ margin-bottom:-30px;
 	.benefits ul{margin:15px 0 0;}	
 	.hire h3{font-size:1em; color:#333; padding:20px 0 0;}
 	.beneMaso li:first-child,
-	.beneMaso li{width:50%; min-height:70px;}
+	.beneMaso li{width:50%; min-height:70px; text-align:left;}
 	.beneMaso li img{width:44.3%;}
-
+	.applyBg .spec dt,
+	.applyBg .spec dd{float:left;}
+	.applyBg .spec dt{width:25%; clear:both;}  
+	.applyBg .spec dd,
+	.applyBg .spec dd.w80{width:75%; clear:none;}
+	.applyBg .spec dd a img{width:47px;}
+	.applyBtn{padding:10px 0  20px;}
+	.applyBtn img{width:70px;}
+	.applyBg .spec dd p{font-size:1em;}
 	
 	//콘택트 시작
 	.contactWrap{padding-top:100px;}
@@ -464,13 +491,13 @@ margin-bottom:-30px;
 	.storySlide ul li p{top:-180px; font-size:22px;}
 	.storySlide ul li img{width:230px; height:170px; margin-left:-96px;}
 
-	.stroySlideWrap .btn_area{bottom:60px; position:absolute; width:100%; text-align:center;}
+	.stroySlideWrap .btn_area{bottom:20%; position:absolute; width:100%; text-align:center;}
 	.stroySlideWrap .btn_area a{position:relative; vertical-align:middle;}
 
 	.stroySlideWrap #paging{display:inline-block;}
 	.stroySlideWrap .btn_area > a img{width:10px; height:13px;}
 	.stroySlideWrap .btn_area > a.next{margin-left:5px;}
-	.stroySlideWrap #paging a{width:45px; height:45px; background-size:100%; margin:0 0 0 5px;}
+	.stroySlideWrap #paging button{width:45px; height:45px; background-size:100%; margin:0 0 0 5px;}
 
 	//리쿠르트부분 시작	
 	.recruitWrap{padding:116px 0 0px;}
@@ -490,6 +517,17 @@ margin-bottom:-30px;
 	.beneMaso li:first-child,
 	.beneMaso li{width:25%; min-height:90px;}
 	.beneMaso li img{width:79.3%; max-width:75px;}
+	.applyBg .spec dt,
+	.applyBg .spec dd{float:left;}
+	.applyBg .spec dt{width:25%; clear:both;}  
+	.applyBg .spec dd,
+	.applyBg .spec dd.w80{width:75%; clear:none;}
+	.applyBg .spec dd a img{width:67px;}
+	.applyBg .spec dd p{font-size:0.8em;}
+	.applyBtn{padding:15px 0  30px;}
+	.applyBtn img{width:120px;}
+
+
 
 	//콘택트 시작
 	.contactWrap{padding-top:170px;}
@@ -511,7 +549,7 @@ margin-bottom:-30px;
   
 .spec .head,
 .spec .headEx{font-size:0.43em;}
-
+.applyBg .spec dd p{font-size:0.8em;}
 }
 
 @media screen and (min-width: 1001px) and (max-width: 1800px) {

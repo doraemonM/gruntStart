@@ -143,9 +143,25 @@ module.exports = function(grunt) {
                     // banner: '<%= banner %>'
                 },
                 src: [
-                    '<%= config.app %>/js/common.js'
+                    '<%= config.app %>/js/common.js',					
+					'<%= config.app %>/js/jquery.mCustomScrollbar.concat.min.js',
+					'<%= config.app %>/js/masonry.pkgd.min.js',
+					'<%= config.app %>/js/plugins/CSSPlugin.js',
+					'<%= config.app %>/js/plugins/EasePack.js',	
+					'<%= config.app %>/js/TweenMax.js',  
+					'<%= config.app %>/js/jquery.gsap.js',
+					'<%= config.app %>/js/TimelineLite.js',
+					'<%= config.app %>/js/TweenLite.js',	
+					'<%= config.app %>/js/swipe.js'
+					//'<%= config.app %>/js/jquery.event.drag-2.2.js',
+					//'<%= config.app %>/js/jquery_touchSlider.js'
+					
+									                  				
                 ],
-                dest: '<%= config.dist %>/js/common.js'
+                dest:
+					'<%= config.dist %>/js/common.js'
+					
+					
             }
         },
 
@@ -217,7 +233,8 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 9000,
-                    hostname: 'localhost',
+                    hostname: '192.168.0.27',
+					//hostname: 'localhost',
                     livereload: 35729,
                     // keepalive: true,
                     base: '<%= config.dist %>',
@@ -297,11 +314,44 @@ module.exports = function(grunt) {
                     //     dest: '<%= config.dist %>/fonts/'
                     // },
                     // jquery
+					/*
                     {
                         nonull: true,
                         src: '<%= config.bower %>/jquery/jquery.min.js',
                         dest: '<%= config.dist %>/js/lib/jquery.min.js'
                     },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/jquery.gsap.js',
+                        dest: '<%= config.app %>/js/jquery.gsap.js'
+                    },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/jquery.mCustomScrollbar.concat.min.js',
+                        dest: '<%= config.app %>/js/jquery.mCustomScrollbar.concat.min.js'
+                    },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/masonry.pkgd.min.js',
+                        dest: '<%= config.app %>/js/masonry.pkgd.min.js'
+                    },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/TimelineLite.js',
+                        dest: '<%= config.app %>/js/TimelineLite.js'
+                    },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/TweenLite.js',
+                        dest: '<%= config.app %>/js/TweenLite.js'
+                    },
+					{
+                        nonull: true,
+                        src: '<%= config.app %>/js/TweenMax.js',
+                        dest: '<%= config.app %>/js/TweenMax.js'
+                    },
+					*/
+
                     // // jquery ui
                     // {
                     //     nonull: true,

@@ -199,9 +199,10 @@ $(document).ready(function(){
 				$(window).scroll(function(){							
 					var scrollTop = $(document).scrollTop();	
 					var organi = $('#orgaTop').offset().top;	
+					var proper = $('.propertyWrap').offset().top;	
 					if( organi <= scrollTop){								
 							tl.play();
-					}else if( organi >= scrollTop){								
+					}else if( proper >= scrollTop){									
 							tl.reverse();
 					}
 					
